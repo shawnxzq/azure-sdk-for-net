@@ -505,6 +505,23 @@ namespace DataFactory.Tests.JsonSamples
         }
     }
 }";
+        [JsonSample]
+        public const string CosmosDbLinkedServiceWithoutConnectionString = @"
+{
+    name: ""LinkedService-CosmosDb"",
+    properties:
+    {
+        type: ""CosmosDb"",
+        typeProperties: {
+            accountEndpoint: ""https://fakecosmosdb.documents.azure.com:443/"",
+            database: ""testdb"",
+            accountKey: {
+                value : ""fakeConnString"",
+                type : ""SecureString""
+            }
+        }
+    }
+}";
 
         [JsonSample]
         public const string CosmosDbLinkedServiceWithAccountKeyInAKV = @"
